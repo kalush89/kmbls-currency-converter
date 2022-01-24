@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 13px;
+    background:linear-gradient(to top right, rgba(156, 4, 93, 0.781), rgba(255, 238, 0, 0.699)), url('/img/currencies.jpg');
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+/* background: linear-gradient(to bottom right, rgb(138, 7, 170), rgb(102, 97, 21)) no-repeat;
+    */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(223, 222, 222);
+    max-width: 350px;
+    border-radius: 7px;
+}
+
+main > #display {
+    text-align: center;
+    align-self: center;
+    padding: 1em;
+    margin: .6em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid rgb(173, 171, 171);
+    width: 300px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+
+main > div#form {
+    display: grid;
+    grid-template: repeat(8, min-content) / 1fr;
+    margin: 1em;
+}
+
+input[type="number"], select {
+    width: 300px;
+    display: inline-block;
+    padding: 14px 20px;
+    margin: 8px 0;
+    font-size: 18px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 0;
+    border-radius: 4px;
+}
+
+#from > option {
+    color: rgb(56, 56, 56);
+}
+
+input[type="submit"] {
+    width: 300px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    font-size: 18px;
+    background-color: rgb(31, 70, 243);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.05s all;
+}
+
+input[type="number"]:focus, 
+select:focus {
+    outline: none !important;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(56, 91, 243);
+}
+
+label {
+    font-weight: 700;
+    color: rgb(77, 76, 76);;
+}
+
+div#err-amount {
+    color: red;
+    font-weight: 700;
+ }
+
+ div#err-from {
+    color: red;
+    font-weight: 700;
+ }
+
+ div#err-to {
+    color: red;
+    font-weight: 700;
+ }
+
+.strip {
+    align-self: center;
+    background: linear-gradient(90deg, rgba(156, 4, 93, 0.781), rgba(255, 238, 0, 0.699));
+    height: 1.5px;
+   width: 100%;
+}
+
+p {
+    margin-top: 10px; 
+    font-weight: 800;
+    color: rgb(77, 76, 76); 
+    text-align: center;
+}
+
+p:nth-last-of-type(1){
+    margin-bottom: 20px;
+}
+
+
+@media all and (min-width: 790px) {
+
+    main {
+        max-width: 800px;
+    }
+
+    main > #display {
+        width: 96%;
+    }
+    main > div#form {
+        grid-template: repeat(8, min-content) / 1fr 1fr;
+        column-gap: 1em;
+    }
+
+    #amount-label {
+       grid-column: 1 / span 1;
+       grid-row: 1 / span 1;  
+    }
+
+    input[type="number"] {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 1;
+        width: 100%; 
+         
+     }
+
+     div#err-amount {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+     }
+
+     #from-label {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;  
+     }
+
+    select#from {
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 1;
+    }
+
+    div#err-from {
+        grid-column: 1 / span 1;
+        grid-row: 6 / span 1;
+    }
+
+    #to-label {
+        grid-column: 2 / span 1;
+        grid-row: 4 / span 1;  
+     }
+
+    select#to {
+        grid-column: 2 / span 1;
+        grid-row: 5 / span 1;
+    }
+    div#err-to {
+        grid-column: 2 / span 1;
+        grid-row: 6 / span 1;
+    }
+
+    input[type="submit"] {
+        grid-column: 1 / span 2;
+        grid-row: 7 / span 1;
+        width: 100%;
+       
+    }
+
+    
+
+}

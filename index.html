@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Simple currency converter</title>
+</head>
+
+<body>
+
+
+    <main>
+        <div id="display">Display</div>
+
+        <div id="form">
+            <label for="amount" id="amount-label">Amount</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter amount" min="0">
+            <div id="err-amount"></div>
+
+            <label for="from" id="from-label">From</label>
+            <select name="from" id="from">
+                <option selected value="">Exchange from</option>
+            </select>
+            <div id="err-from"></div>
+
+            <label for="to" id="to-label">To</label>
+            <select name="to" id="to">
+                <option selected value="">Exchange to</option>
+            </select>
+            <div  id="err-to"></div>
+
+            <input type="submit" value="Convert" class="btn">
+
+        </div>
+        <div class="strip"></div>
+
+        <p>Designed and Developed by Albert Kombol</p>
+        <p>Photo by Pratikxox from Pexels</p>
+    </main>
+    <script src="./js/main.js"></script>
+    <script>
+        let display = document.getElementById('display');
+        let amount = document.getElementById('amount');
+        let from = document.getElementById('from');
+        let to = document.getElementById('to');
+        let btn = document.querySelector('.btn');
+
+
+
+        window.addEventListener('load', (e) => {
+            const convert = new Converter(parseInt(amount.value), from.value, to.value);
+            convert.getCurrencies();
+        });
+
+        btn.addEventListener('click', (e) => {
+            const convert = new Converter(parseInt(amount.value), from.value, to.value);
+            convert.validate();
+            console.log(convert);
+        });
+    </script>
+</body>
+
+</html>
