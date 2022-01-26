@@ -50,15 +50,14 @@
 
 
 
-        window.addEventListener('load', (e) => {
+        window.addEventListener('load', () => {
             const convert = new Converter(parseInt(amount.value), from.value, to.value);
             convert.getCurrencies();
         });
 
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', () => {
             const convert = new Converter(parseInt(amount.value), from.value, to.value);
             convert.validate();
-            console.log(convert);
         });
     </script>
 </body>
